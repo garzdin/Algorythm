@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10102" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="dno-19-Aal">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10080"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--Playlists-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="PlaylistMasterViewController" customModule="Algorythm" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="zTw-xR-kUz">
+                                <rect key="frame" x="60" y="184" width="200" height="200"/>
+                                <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="eSA-PH-tiU"/>
+                                    <constraint firstAttribute="height" constant="200" id="oOa-Si-3nh"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="8dN-Wc-jI5" appends="YES" id="7gE-Xr-hhd"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1764705882352941" green="0.18431372549019609" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="zTw-xR-kUz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6Dc-WS-er5"/>
+                            <constraint firstItem="zTw-xR-kUz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pyX-bg-iVa"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Playlists" id="noP-eN-vLc"/>
+                    <connections>
+                        <outlet property="playlistImageView0" destination="zTw-xR-kUz" id="XYx-jk-SF6"/>
+                        <segue destination="4hQ-X4-hkV" kind="push" identifier="showPlaylistDetailSegue" id="1HT-iQ-Q0B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="8dN-Wc-jI5">
+                    <connections>
+                        <action selector="showPlaylistDetail:" destination="BYZ-38-t0r" id="qEH-3y-oQj"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="766" y="331"/>
+        </scene>
+        <!--Artists-->
+        <scene sceneID="Xr5-ap-Ai8">
+            <objects>
+                <viewController id="4hQ-X4-hkV" customClass="PlaylistDetailViewController" customModule="Algorythm" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Yb7-up-YjZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="fYG-lT-3v7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TgQ-Hk-fbn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0wo-db-vFO">
+                                <rect key="frame" x="0.0" y="64" width="320" height="290"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="0wo-db-vFO" secondAttribute="height" multiplier="32:29" id="beh-gh-H2H"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artists" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrL-Q8-TWb">
+                                <rect key="frame" x="20" y="374" width="46" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Number 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="68U-jS-mNp">
+                                <rect key="frame" x="20" y="403" width="95.5" height="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Number 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAS-Gp-T9H">
+                                <rect key="frame" x="20" y="428" width="95.5" height="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Number 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1k-m4-QCi">
+                                <rect key="frame" x="20" y="453" width="95.5" height="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fps-bW-JOv">
+                                <rect key="frame" x="0.0" y="264" width="320" height="90"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Goes Here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g09-Ux-SR9">
+                                        <rect key="frame" x="20" y="10" width="113.5" height="21"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eiN-Cc-6Fj">
+                                        <rect key="frame" x="20" y="39" width="280" height="42.5"/>
+                                        <string key="text">This is a collection of my favorite songs to listen to when working out. It's got everything from fast cardio to power workout tunes. All the right fuel to get your engine going.</string>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="g09-Ux-SR9" firstAttribute="top" secondItem="fps-bW-JOv" secondAttribute="top" constant="10" id="N3r-s8-lLx"/>
+                                    <constraint firstItem="g09-Ux-SR9" firstAttribute="leading" secondItem="fps-bW-JOv" secondAttribute="leading" constant="20" id="NFi-5y-vg0"/>
+                                    <constraint firstAttribute="trailing" secondItem="eiN-Cc-6Fj" secondAttribute="trailing" constant="20" id="Z8a-cx-oce"/>
+                                    <constraint firstItem="eiN-Cc-6Fj" firstAttribute="leading" secondItem="fps-bW-JOv" secondAttribute="leading" constant="20" id="dAc-JG-aTs"/>
+                                    <constraint firstAttribute="width" secondItem="fps-bW-JOv" secondAttribute="height" multiplier="8:3" constant="80" id="fx6-7r-4eZ"/>
+                                    <constraint firstItem="eiN-Cc-6Fj" firstAttribute="top" secondItem="g09-Ux-SR9" secondAttribute="bottom" constant="8" id="yJd-OT-RVG"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1764705882" green="0.1843137255" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="0wo-db-vFO" firstAttribute="leading" secondItem="TgQ-Hk-fbn" secondAttribute="leading" id="0pq-fG-nRv"/>
+                            <constraint firstItem="68U-jS-mNp" firstAttribute="top" secondItem="wrL-Q8-TWb" secondAttribute="bottom" constant="8" id="GGv-Bh-rAc"/>
+                            <constraint firstItem="wrL-Q8-TWb" firstAttribute="top" secondItem="fps-bW-JOv" secondAttribute="bottom" constant="20" id="JyW-W9-fT2"/>
+                            <constraint firstItem="68U-jS-mNp" firstAttribute="leading" secondItem="TgQ-Hk-fbn" secondAttribute="leading" constant="20" id="Qdi-E1-u4u"/>
+                            <constraint firstAttribute="trailing" secondItem="fps-bW-JOv" secondAttribute="trailing" id="ao9-tJ-Eq3"/>
+                            <constraint firstItem="aAS-Gp-T9H" firstAttribute="top" secondItem="68U-jS-mNp" secondAttribute="bottom" constant="8" id="dP9-wM-WBu"/>
+                            <constraint firstItem="j1k-m4-QCi" firstAttribute="leading" secondItem="TgQ-Hk-fbn" secondAttribute="leading" constant="20" id="h3e-fg-yCw"/>
+                            <constraint firstAttribute="trailing" secondItem="0wo-db-vFO" secondAttribute="trailing" id="hhw-SQ-nfh"/>
+                            <constraint firstItem="fps-bW-JOv" firstAttribute="leading" secondItem="TgQ-Hk-fbn" secondAttribute="leading" id="hzf-Bd-ijV"/>
+                            <constraint firstItem="0wo-db-vFO" firstAttribute="top" secondItem="Yb7-up-YjZ" secondAttribute="bottom" id="llL-pU-txU"/>
+                            <constraint firstItem="fps-bW-JOv" firstAttribute="top" secondItem="0wo-db-vFO" secondAttribute="bottom" constant="-90" id="mxu-5Q-d8I"/>
+                            <constraint firstItem="j1k-m4-QCi" firstAttribute="top" secondItem="aAS-Gp-T9H" secondAttribute="bottom" constant="8" id="s2L-Tt-cao"/>
+                            <constraint firstItem="wrL-Q8-TWb" firstAttribute="leading" secondItem="TgQ-Hk-fbn" secondAttribute="leading" constant="20" id="ufk-jw-sSc"/>
+                            <constraint firstItem="aAS-Gp-T9H" firstAttribute="leading" secondItem="TgQ-Hk-fbn" secondAttribute="leading" constant="20" id="yRy-Jd-cu8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Artists" id="15f-NY-JS8"/>
+                    <connections>
+                        <outlet property="playlistArtist0" destination="68U-jS-mNp" id="hKG-6n-KCu"/>
+                        <outlet property="playlistArtist1" destination="aAS-Gp-T9H" id="Ig1-nV-yQg"/>
+                        <outlet property="playlistArtist2" destination="j1k-m4-QCi" id="JYH-Tz-An6"/>
+                        <outlet property="playlistCoverImage" destination="0wo-db-vFO" id="ipb-tn-dbk"/>
+                        <outlet property="playlistDescription" destination="eiN-Cc-6Fj" id="k0z-ig-1EE"/>
+                        <outlet property="playlistTitle" destination="g09-Ux-SR9" id="yLP-Du-Jsz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ToK-j3-t9j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1169" y="331"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="OgM-FS-k0X">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dno-19-Aal" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="E86-x9-1c9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.1764705882" green="0.1843137255" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="yCH-yn-wsa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="slg-RT-ABk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="234" y="331"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="placeholder" width="66" height="73"/>
+    </resources>
+</document>
